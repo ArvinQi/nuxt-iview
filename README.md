@@ -26,7 +26,7 @@ npm install
     # 本地开发 开启服务
     npm run dev
 ```
-浏览器访问 http://localhost:3005
+浏览器访问 http://localhost:3000/login
 
 ## 发布
 ```bash
