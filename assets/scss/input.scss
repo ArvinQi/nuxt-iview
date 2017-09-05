@@ -1,0 +1,94 @@
+
+.input-field {
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    /* Label Active State */
+    /* Bottom Bar */
+    /* Input Active State */
+    /* Highlighter */
+    /* Highlight input active state */
+    input {
+        margin: 0 auto;
+        padding: 8px 0;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $border-color-base;
+        background: transparent;
+        color: $input-color;
+        font-size: $input-font-size;
+        &:focus {
+            outline: none;
+        }
+        /* override chrome autofill color */
+        &:-webkit-autofill{
+            box-shadow: 0 0 0px 1000px $background-color-dark inset;
+            -webkit-text-fill-color: $input-color;
+        }
+    }
+    label {
+        font-size: 1em;
+        color: $label-color;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        top: 8px;
+        transition: 0.4s ease all;
+        -moz-transition: 0.4s ease all;
+        -webkit-transition: 0.4s ease all;
+    }
+    input {
+        &:focus~label,
+        &:valid~label,
+        &:disabled~label {
+            top: -16px;
+            font-size: $input-font-size;
+            color: $text-color;
+            font-weight: bold;
+        }
+    }
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+        &:before,
+        &:after {
+            content: '';
+            height: 1px;
+            width: 0;
+            bottom: 1px;
+            position: absolute;
+            background: $background-color-base;
+            transition: 0.4s ease all;
+            -moz-transition: 0.4s ease all;
+            -webkit-transition: 0.4s ease all;
+        }
+        &:before {
+            left: 50%;
+        }
+        &:after {
+            right: 50%;
+        }
+    }
+    input:focus~.bar {
+        &:before,
+        &:after {
+            width: 50%;
+        }
+    }
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    input:focus~.highlight {
+        -webkit-animation: inputHighlighter 0.3s ease;
+        -moz-animation: inputHighlighter 0.3s ease;
+        animation: inputHighlighter 0.3s ease;
+    }
+}

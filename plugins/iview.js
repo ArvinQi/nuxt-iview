@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import iview from 'iview'
-import 'iview/dist/styles/iview.css'
+import 'assets/less/iview.less'
+import 'assets/scss/core.scss'
 
 Vue.use(iview)

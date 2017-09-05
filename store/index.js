@@ -36,27 +36,31 @@ const store = () => new Vuex.Store({
     }
   },
   actions: {
-    // async nuxtServerInit ({ state, commit }, { isDev, req }) {
-    //   if (isDev) {
-    //     commit('setApiURI', 'http://localhost:4000')
-    //   }
-    //   const hostParts = (req.headers.host || '' ).replace('.org', '').split('.')
-    //   // If url like ja.nuxtjs.org
-    //   if (hostParts.length === 2) {
-    //     commit('setLocale', hostParts[0])
-    //   }
-    //   try {
-    //     const resReleases = await axios(state.apiURI + '/releases')
-    //     commit('setGhVersion', resReleases.data[0].name)
-    //     const resLang = await axios(state.apiURI + '/lang/' + state.locale)
-    //     commit('setLang', resLang.data)
-    //     commit('setDocVersion', resLang.data.docVersion)
-    //     const resMenu = await axios(state.apiURI + '/menu/' + state.locale)
-    //     commit('setMenu', resMenu.data)
-    //   } catch (e) {
-    //     console.error('Error on [nuxtServerInit] action, please run the docs server.') // eslint-disable-line no-console
-    //   }
-    // }
+    async nuxtServerInit ({ state, commit }, { isDev, req }) {
+      if (isDev) {
+        commit('setApiURI', 'http://localhost:4000')
+      }
+      const hostParts = (req.headers.host || '' ).replace('.org', '').split('.')
+      // If url like ja.nuxtjs.org
+      if (hostParts.length === 2) {
+        commit('setLocale', hostParts[0])
+      }
+      try {
+        const lang = require('assets/lang/en/lang.json');
+        const menu = require('assets/lang/en/menu.json');
+        commit('setLang', lang);
+        commit('setMenu', menu);
+        // const resReleases = await axios(state.apiURI + '/releases')
+        // commit('setGhVersion', resReleases.data[0].name)
+        // const resLang = await axios(state.apiURI + '/lang/' + state.locale)
+        // commit('setLang', resLang.data)
+        // commit('setDocVersion', resLang.data.docVersion)
+        // const resMenu = await axios(state.apiURI + '/menu/' + state.locale)
+        // commit('setMenu', resMenu.data)
+      } catch (e) {
+        console.error('Error on [nuxtServerInit] action, please run the docs server.') // eslint-disable-line no-console
+      }
+    }
   }
 })
 

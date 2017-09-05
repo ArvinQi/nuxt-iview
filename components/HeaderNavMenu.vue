@@ -2,29 +2,20 @@
   <ul class="Menu">
     <li class="Menu__Item">
       <nuxt-link class="Menu__Item__Link" to="/guide">
-        {{ $store.state.lang.links.guide }}
+        <span class="iconfont icon-date"></span>
       </nuxt-link>
     </li>
     <li class="Menu__Item">
-      <nuxt-link class="Menu__Item__Link" to="/api">
-        {{ $store.state.lang.links.api }}
+      <nuxt-link class="Menu__Item__Link" to="/alert">
+        <span class="iconfont icon-alert"></span>
       </nuxt-link>
     </li>
     <li class="Menu__Item">
-      <nuxt-link class="Menu__Item__Link" to="/examples">
-        {{ $store.state.lang.links.examples }}
+      <nuxt-link class="Menu__Item__Link" to="/setting">
+        <span class="iconfont icon-setting"></span>
       </nuxt-link>
-    </li>
-    <li class="Menu__Item">
-      <nuxt-link class="Menu__Item__Link" to="/faq">
-        {{ $store.state.lang.links.faq }}
-      </nuxt-link>
-    </li>
-    <li class="Menu__Item">
-      <nuxt-header-nav-menu-dropdown/>
     </li>
   </ul>
-</nav>
 </template>
 
 <script>
@@ -38,20 +29,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~assets/scss/core.scss';
 .Menu
 {
-  width: 100%;
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: space-between;
+  justify-content: flex-end;
   @media (min-width: 991px)
   {
-    flex: 1;
+    width: 200px;
+    align-self: flex-end;
     flex-wrap: nowrap;
     padding-left: 15px;
+    justify-content: flex-end;
   }
   &__Item
   {
@@ -73,13 +66,15 @@ export default {
       width: 100%;
       align-items: center;
       justify-content: center;
-      color: #35495e;
-      font-size: 16px;
+      color: $text-color;
       text-decoration: none;
       letter-spacing: 0.5px;
       &:hover
       {
-        color: #41b883;
+        color: $primary-color;
+      }
+      span{
+        font-size: 18px;
       }
       @media (min-width: 991px)
       {

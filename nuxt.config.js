@@ -9,13 +9,13 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css' }
+      { rel: 'stylesheet', href: '//at.alicdn.com/t/font_405176_a39l50hbiilwstt9.css' }
     ]
   },
   css: [
     'normalize.css',
-    'highlight.js/styles/github.css',
-    '~assets/scss/main.scss'
+    // 'highlight.js/styles/github.css',
+    // '~assets/scss/main.scss'
   ],
   plugins: [
     { src: '~/plugins/ga.js', ssr: false },

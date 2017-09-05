@@ -1,20 +1,16 @@
 <template>
   <header class="Header">
+    <left-nav />
     <nuxt-link class="Header__Logo" to="/">
-      <img src="~static/logo_nav.png" alt="Nuxt"/>
-      <h1 class="Header__Logo__Text">NUXT</h1>
+      <img src="~static/logo.png" alt="Logo"/>
     </nuxt-link>
-    <div class="Header__Toggler">
-      <div class="Header__Toggler__Button" @click="toggle">
-        <div :class="{'icon menu': !visible, 'icon close': visible}"></div>
-      </div>
-    </div>
     <nuxt-header-nav/>
   </header>
 </template>
 
 <script>
 import NuxtHeaderNav from '~/components/HeaderNav.vue'
+import LeftNav from '~/components/Nav.vue'
 
 export default {
   computed: {
@@ -24,28 +20,29 @@ export default {
     toggle () { this.$store.commit('toggle', 'visibleHeader') }
   },
   components: {
+    LeftNav,
     NuxtHeaderNav
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '~assets/scss/core.scss';
 .Header
 {
   top: 0;
   width: 100%;
   height: 60px;
   z-index: 995;
-  padding: 0 15px;
+  padding: 0;
   display: flex;
   position: fixed;
   flex-direction: row;
-  background-color: #fff;
+  background-color: $background-color-dark;
   border-bottom: 1px solid #dbdfe1;
   @media (min-width: 991px)
   {
     height: 80px;
-    padding: 0 30px;
   }
   &__Logo
   {
@@ -53,14 +50,8 @@ export default {
     align-items: center;
     @media (min-width: 991px)
     {
-      width: 189px;
-      border-right: 1px solid #dbdfe1;
-    }
-    &__Text
-    {
-      margin: 0;
-      width: 0;
-      overflow: hidden;
+      width: 180px;
+      padding: 0 30px;
     }
   }
   &__Toggler

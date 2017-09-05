@@ -6,9 +6,9 @@
     <div class="Nav__Menu">
       <nuxt-header-nav-menu/>
     </div>
-    <div class="Nav__Lang">
+    <!-- <div class="Nav__Lang">
       <nuxt-header-nav-lang/>
-    </div>
+    </div> -->
   </nav>
 </template>
 
@@ -40,7 +40,6 @@ export default {
   right: 0;
   bottom: 0;
   overflow-y: auto;
-  background-color: #fff;
   @media (min-width: 991px)
   {
     display: flex;
@@ -49,6 +48,7 @@ export default {
     flex-wrap: nowrap;
     overflow-y: visible;
     position: relative;
+    padding: 0 30px;
   }
   &--hidden
   {
@@ -70,6 +70,7 @@ export default {
       order: 1;
       height: 79px;
       border-bottom: none;
+      justify-content: flex-start;
     }
   }
   &__Lang
@@ -89,10 +90,11 @@ export default {
     border-bottom: 1px solid #dbdfe1;
     @media (min-width: 991px)
     {
-      flex: 4;
+      flex: 2;
       order: 2;
       height: 79px;
       border-bottom: none;
+      justify-content: flex-end;
     }
   }
 }
