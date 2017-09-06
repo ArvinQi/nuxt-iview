@@ -3,6 +3,16 @@
   "version": "1.0.0",
   "description": "Nuxt.js official website",
   "main": "index.js",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "build-check": "nuxt build --analyze",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "serve": "serve ./dist",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --ignore-pattern plugins/ga.js .",
+    "precommit": "npm run lint"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "bootstrap": "3",
@@ -28,16 +38,6 @@
     "sass-loader": "^6.0.6",
     "less": "^2.7.2",
     "less-loader": "^4.0.5"
-  },
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "build-check": "nuxt build --analyze",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "serve": "serve ./dist",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --ignore-pattern plugins/ga.js .",
-    "precommit": "npm run lint"
   },
   "repository": {
     "type": "git",

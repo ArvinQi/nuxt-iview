@@ -13,7 +13,7 @@ module.exports = {
     ]
   },
   css: [
-    'normalize.css',
+    'normalize.css'
     // 'highlight.js/styles/github.css',
     // '~assets/scss/main.scss'
   ],
