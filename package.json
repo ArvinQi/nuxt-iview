@@ -1,7 +1,7 @@
 {
-  "name": "nuxtjs.org",
-  "version": "1.0.0",
-  "description": "Nuxt.js official website",
+  "name": "nuxt-iview",
+  "version": "0.0.1",
+  "description": "Build a dashboard using nuxt and iview.",
   "main": "index.js",
   "scripts": {
     "dev": "nuxt",
@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nuxt/nuxtjs.org.git"
+    "url": "git+https://github.com/ArvinQi/nuxt-iview.git"
   },
   "keywords": [
     "nuxt.js",
@@ -52,7 +52,7 @@
   "author": "alexchopin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nuxt/nuxtjs.org/issues"
+    "url": "https://github.com/ArvinQi/nuxt-iview/issues"
   },
-  "homepage": "https://github.com/nuxt/nuxtjs.org#readme"
+  "homepage": "https://github.com/ArvinQi/nuxt-iview#readme"
 }

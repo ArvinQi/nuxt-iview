@@ -8,6 +8,7 @@ nuxt + iview + vue2 + vuex + nuxt + ES6/7 + axios + sass + flex
 #### 注意：由于涉及大量的 ES6/7 等新属性，nodejs 必须是 6.0 以上版本 ，先行版有可能会出问题，建议使用稳定版
 
 npm install
+
 **注意：该项目目前使用iview@2.x版本, 所以最低兼容 Vue 2.x, 不支持IE 8**
 
 
